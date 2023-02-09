@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="SmartResponse webhook Automation Plugin" Guid="c132a1d62-4204-46d0-83d5-3b8b0a72e221" Version="1">
+  <remv1:Action Name="Push AlarmID to webhook" Command="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" >
+    <remv1:ConstantParameter Name="Script" Switch="-file Webhook_LR_Integration.ps1" Order="1" />
+    <remv1:StringParameter Name="n8nwebhook" Switch="" Order="2" >
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="Web Hook URL here" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+    <remv1:StringParameter Name="ignoressl" Switch="" Order="3" >
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="TRUE" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+    <remv1:StringParameter Name="alarmid" Switch="" Order="4" >
+      <remv1:DefaultInput>
+        <remv1:AlarmId />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+  </remv1:Action >
+</remv1:Remediation-Plugin>
